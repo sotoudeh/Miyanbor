@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa"> <!-- Set direction and language -->
+<head>
+    <title>MVP شبیه ساز برنامه</title> <!-- MVP App Simulator -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: 'IRANSans', Tahoma, sans-serif; padding: 15px; max-width: 450px; margin: auto; font-size: 14px;}
+        h1 { font-size: 18px; text-align: center; margin-bottom: 15px;}
+        button { display: block; width: 100%; padding: 12px; margin-top: 15px; font-size: 15px; cursor: pointer; border-radius: 5px; border: 1px solid #ccc; background-color: #f8f8f8;}
+        button:disabled { cursor: not-allowed; background-color: #eee; color: #999; }
+        #appStatus { font-weight: bold; margin-top: 10px; display: block; padding: 10px; background-color: #eee; border-radius: 4px; text-align: center;}
+        #qr-reader { width: 95%; max-width: 320px; margin: 15px auto; border: 1px solid #ccc; display: none; background-color: #f0f0f0; }
+        #otpDisplay { display:none; margin-top: 20px; padding: 15px; background-color: #dff0d8; border: 1px solid #d6e9c6; color: #3c763d; font-weight: bold; font-size: 1.4em; text-align: center; border-radius: 5px; }
+        hr { border: 0; border-top: 1px solid #eee; margin: 25px 0; }
+    </style>
+</head>
+<body>
+    <h1>شبیه ساز برنامه</h1>
+
+    <p>وضعیت: <span id="appStatus">آماده</span></p>
+
+    <button id="scanButton">اسکن کد QR</button>
+    <div id="qr-reader"></div>
+
+    <hr>
+
+    <button id="sendCardButton" disabled>ارسال اطلاعات کارت</button>
+    <button id="simulateOtpArrivalButton" style="display:none;" disabled>شبیه سازی دریافت رمز پویا (123456)</button>
+
+    <div id="otpDisplay"></div> <!-- OTP will appear here -->
+
+
+    <!-- IMPORTANT: Make sure you downloaded html5-qrcode.min.js -->
+    <script src="html5-qrcode.min.js"></script>
+
+    <!-- Include your App Logic Script -->
+    <script src="app.js"></script>
+</body>
+</html>
